@@ -1,0 +1,143 @@
+:root{font-family:system-ui,-apple-system,Segoe UI,sans-serif;color:#20392b;background:#f3f7f0}*{box-sizing:border-box}body{margin:0}.app{max-width:980px;margin:auto;padding:16px}header{background:linear-gradient(125deg,#174c36,#327e51);color:white;padding:22px;border-radius:22px;display:flex;align-items:center;justify-content:space-between;gap:12px}h1{margin:0;font-size:1.8rem}header p{margin:5px 0 0;color:#dcebdc}#today{font-size:.85rem;text-align:right}nav{display:flex;gap:6px;overflow-x:auto;padding:15px 0}button{cursor:pointer;font:inherit;border:0;border-radius:11px;padding:11px 15px;background:#e0ecdf;color:#174c36}button:hover{filter:brightness(.96)}nav button{white-space:nowrap;flex:1}nav button.active,.primary{background:#216943;color:#fff}.danger{background:#fae2de;color:#8b2525}.secondary{background:#edf2e9}.card{background:white;border-radius:18px;padding:18px;box-shadow:0 2px 12px #173d2110;margin:12px 0}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}.grid .card{margin:0}.muted{color:#64766a}.pill{display:inline-block;background:#e3f1df;border-radius:20px;padding:4px 9px;font-size:.82rem}h2{margin:18px 0 10px}h3{margin:0 0 8px}.row{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}.big{font-size:2rem;font-weight:750;color:#17613c}label{display:block;font-weight:600;margin:12px 0 5px}input,select,textarea{width:100%;padding:12px;border:1px solid #b9cdbd;border-radius:10px;font:inherit;background:#fff;color:#20392b}textarea{min-height:95px;resize:vertical}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:15px}.plant-emoji{font-size:2.8rem;background:#e9f2e4;text-align:center;padding:14px;border-radius:14px}.task{display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-bottom:1px solid #edf0eb}.task input{width:20px;height:20px;margin:3px 0}.done{text-decoration:line-through;color:#7a897d}.zones{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.zone{min-height:145px;border:2px dashed #a9c8a5;background:#e2eedb;border-radius:18px;padding:14px;text-align:center}.zone strong{display:block;margin:7px}.zone span{font-size:2rem}.empty{padding:30px;text-align:center;color:#64766a}.notice{background:#e3f1df;padding:15px;border-radius:12px}footer{text-align:center;font-size:.8rem;color:#708172;padding:24px 0}@media(max-width:600px){.app{padding:10px}header{padding:17px}h1{font-size:1.5rem}nav button{font-size:.78rem;padding:11px 9px}.zones{gap:8px}.zone{padding:10px;min-height:130px}}
+
+.botanical-photo{position:relative;overflow:hidden;min-height:130px;display:flex;align-items:center;justify-content:center}.botanical-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:14px}.botanical-photo.large{min-height:235px}.botanical-info{display:grid;gap:10px;margin-top:15px}.botanical-info section{padding:12px;background:#eef5e9;border-radius:12px}.botanical-info p{margin:5px 0 0}.card[hidden]{display:none!important}
+
+.garden-grid{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:3px;background:#bfd6b1;padding:6px;border:3px solid #7b9e6c;border-radius:14px;aspect-ratio:4/3;margin:12px 0}.garden-cell{border:1px solid #a6c99a;background:#e5f2d9;border-radius:5px;min-width:0;padding:0;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;font-size:clamp(12px,3.4vw,23px);cursor:pointer;touch-action:manipulation}.garden-cell:nth-child(odd){background:#d8e9cb}.garden-cell.occupied{background:#c3e1b1;border-color:#6d9d65}.garden-cell small{font-size:10px}.garden-cell:focus-visible{outline:3px solid #155e39;outline-offset:1px}#map-plant{max-width:100%}
+
+.map-mode{display:flex;gap:8px;flex-wrap:wrap}.map-mode button{flex:1;min-width:130px}.garden-cell.terrain-grass{background:#b9dba7}.garden-cell.terrain-path{background:#c8ac87}.garden-cell.terrain-terrace{background:#c4a47c}.garden-cell.terrain-vegetable{background:#a8c88d}.garden-cell.terrain-flower{background:#f1cbd8}.garden-cell.terrain-water{background:#a8d6eb}.garden-cell.terrain-soil{background:#b99b7a}.garden-cell .terrain-icon{font-size:clamp(11px,2.5vw,19px);opacity:.8}.garden-cell.occupied{box-shadow:inset 0 0 0 2px #447d42}
+
+nav{overflow-x:auto;display:flex;gap:4px;scrollbar-width:thin}nav button{flex:1 0 auto;white-space:nowrap}.weather-days{display:grid;grid-template-columns:repeat(7,minmax(100px,1fr));gap:8px;overflow-x:auto;padding-bottom:8px}.weather-day{background:#f0f6eb;border:1px solid #d4e4cb;border-radius:12px;padding:12px 7px;display:flex;flex-direction:column;align-items:center;gap:7px;text-align:center}.weather-day .weather-icon{font-size:1.8rem}.weather-day small{font-size:.78rem;color:#526756}@media(max-width:600px){.weather-days{grid-template-columns:repeat(7,105px)}nav button{flex:0 0 auto}}
+
+.assistant-cards{display:grid;gap:12px;margin-top:16px}.assistant-card{border-left:4px solid #86a994}.assistant-card.urgent{border-left-color:#d35e50}.assistant-card.warning{border-left-color:#dba447}.assistant-card h3{margin-bottom:8px}.assistant-card p{margin:0}.assistant-card ul{margin:10px 0 0;padding-left:20px}.assistant-card li{margin:5px 0}
+
+.journal-photo{width:100%;max-height:340px;overflow:hidden;border-radius:12px;background:#edf3e8;text-align:center;padding:8px}.journal-photo img{max-width:100%;max-height:330px;object-fit:contain;border-radius:8px}#journal-form input[type=file]{padding:9px}#planting-form button{margin-top:12px}
+
+
+/* JARDÉO 2.0 — identité visuelle */
+:root{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:#23372c;background:#f7f7f0;--forest:#184d38;--leaf:#27734c;--sage:#e7eee1;--line:#e1e8dc;--cream:#f7f7f0}
+html{scroll-behavior:smooth}body{background:radial-gradient(ellipse at top right,#edf4e8 0,transparent 38%),var(--cream);min-height:100vh}
+.app{max-width:1080px;padding:22px 22px 10px}
+header{background:linear-gradient(125deg,#123d30 0%,#246447 68%,#397d52 100%);border-radius:26px;padding:29px 30px;box-shadow:0 12px 30px #174c3626;position:relative;overflow:hidden}
+header:after{content:"";position:absolute;right:-42px;bottom:-95px;width:220px;height:220px;border:1px solid #ffffff29;border-radius:50%;pointer-events:none}
+header h1{font-size:2.15rem;letter-spacing:.045em;font-weight:850}header p{font-size:.94rem;color:#d6eadb;letter-spacing:.015em}#today{font-weight:600;color:#e9f5eb}
+nav{position:sticky;top:0;z-index:20;background:#f7f7f0f2;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid #e1e8dc;gap:7px;padding:12px 2px 13px;margin-bottom:8px;scrollbar-width:none}nav::-webkit-scrollbar{display:none}
+nav button{background:transparent;border-radius:13px;color:#516b58;font-weight:650;padding:11px 15px;transition:background .18s,transform .18s}nav button:hover{background:#e8efe3;filter:none}nav button.active{background:#1d6041;color:white;box-shadow:0 4px 12px #1d604126}
+main{min-height:55vh}h2{font-size:1.45rem;color:#183f2d;letter-spacing:-.025em;margin:25px 0 15px}h3{color:#234633;letter-spacing:-.01em}
+.card{background:#fff;border:1px solid #e8eee4;border-radius:22px;padding:21px;box-shadow:0 7px 22px #294e2910;margin:13px 0}.grid{gap:15px}.grid .card{transition:transform .2s,box-shadow .2s}.grid .card:hover{transform:translateY(-2px);box-shadow:0 10px 25px #294e291a}
+.big{font-size:2.5rem;font-weight:850;letter-spacing:-.045em;color:#1e6745}.muted{color:#6c7e70}.pill{background:#e8f3e7;color:#2b6744;border:1px solid #d8e8d5;font-weight:650;padding:5px 11px}
+button{border-radius:12px;font-weight:650;transition:filter .18s,transform .18s}button:active{transform:scale(.985)}button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #8fbca2;outline-offset:2px}.primary{background:#206a47;color:white;box-shadow:0 3px 9px #206a471a}.danger{background:#fce9e4;color:#9a3430}
+input,select,textarea{border:1px solid #cbd9cb;border-radius:12px;padding:13px;background:#fff}input:focus,select:focus,textarea:focus{border-color:#4a9469}label{color:#345541}
+.notice{background:linear-gradient(135deg,#e8f4e4,#f0f6e9);border:1px solid #d5e7ce;border-radius:18px;padding:18px}.plant-emoji{background:#edf4e9;border-radius:17px}.botanical-photo img{border-radius:17px}.botanical-info section{border-radius:15px;background:#f0f5eb}.zone{border-radius:19px;border-color:#b1c9ac;background:#e9f1e3}.garden-grid{border-radius:18px}
+.weather-day{background:#f3f8ef;border-radius:15px;border-color:#e0ead9}.assistant-card{border-left-width:5px}.reminder-item .pill{white-space:nowrap}.journal-photo{border-radius:16px}
+footer{color:#829184;font-size:.78rem;padding:30px 0}
+@media(max-width:600px){
+.app{padding:10px 12px 16px}header{padding:23px 20px;border-radius:22px;align-items:flex-start}header h1{font-size:1.75rem}header p{font-size:.85rem}#today{font-size:.75rem;max-width:105px}
+nav{margin:0 -12px 7px;padding:10px 12px;gap:6px;top:0}nav button{font-size:.79rem;padding:11px 12px;border-radius:12px}
+h2{font-size:1.33rem;margin:20px 0 12px}.card{border-radius:19px;padding:17px}.grid{gap:11px}.actions button{min-height:43px}
+}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important}}
+
+/* JARDÉO 2.1 — tableau de bord */
+.dashboard-intro{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin:18px 0 14px}.dashboard-intro h2{margin:7px 0}.dashboard-intro p{margin:5px 0}.dashboard-eyebrow{font-size:.73rem;font-weight:800;letter-spacing:.13em;color:#2b7b4c}.dashboard-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}.dashboard-stat{display:flex;flex-direction:column;align-items:flex-start;gap:10px;margin:0}.dashboard-stat span{font-size:.88rem;color:#58725d;font-weight:700}.dashboard-stat strong{font-size:2.3rem;color:#1d6342;line-height:1}.dashboard-stat button{background:#edf4e9;font-size:.85rem}.dashboard-columns{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:15px}.dashboard-columns>.card{margin:0}.dashboard-columns .row button{font-size:.8rem;padding:8px 11px}.dashboard-temperature{font-size:2.2rem;font-weight:850;color:#1c6344;margin:15px 0 5px}.dashboard-weather{background:linear-gradient(135deg,#e8f2e5,#fff)}.dashboard-tip{background:#f4f8ef}.dashboard-list-item{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:11px 0;border-bottom:1px solid #edf0e9}.dashboard-list-item:last-child{border-bottom:0}.dashboard-list-item small{display:block;color:#708272;margin-top:4px}.dashboard-list-item .pill{font-size:.72rem;white-space:nowrap}
+@media(max-width:680px){.dashboard-stats{gap:8px}.dashboard-stat{padding:13px;gap:9px}.dashboard-stat strong{font-size:1.9rem}.dashboard-stat span{font-size:.75rem}.dashboard-stat button{font-size:.72rem;padding:8px}.dashboard-columns{grid-template-columns:1fr;gap:10px}.dashboard-intro>.primary{width:100%}}
+
+/* Scanner botanique */
+#scan-form input[type=file]{padding:14px;border:2px dashed #b6cfb7;background:#f7faf5}#scan-form button[type=submit]{margin-top:16px;width:100%}.scan-preview{border-radius:16px;overflow:hidden;margin-top:12px;background:#e8f1e7}.scan-preview img{max-width:100%;max-height:280px;object-fit:contain;display:block;margin:auto}
+
+/* JARDÉO 2.4 : fiches d'entretien */
+.care-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:15px 0}.care-tile{background:#f1f7ed;border:1px solid #e0ebd9;border-radius:15px;padding:14px}.care-tile strong{color:#205d3c}.care-tile p{margin:7px 0 0;line-height:1.5}.care-unverified{border-left:4px solid #d3a458}@media(max-width:600px){.care-grid{grid-template-columns:1fr}.care-tile{padding:12px}}
+
+/* Navigation simplifiée 2.9 */
+.main-nav{display:flex;align-items:stretch;gap:6px;overflow:visible;flex-wrap:wrap}
+.main-nav>button{flex:1 1 auto;white-space:nowrap}
+.nav-more{position:relative;flex:1 1 auto;min-width:100px}
+.nav-more>summary{list-style:none;cursor:pointer;text-align:center;border-radius:11px;padding:11px 15px;background:#e0ecdf;color:#174c36;white-space:nowrap}
+.nav-more>summary::-webkit-details-marker{display:none}
+.nav-more[open]>summary,.nav-more:has(button.active)>summary{background:#216943;color:#fff}
+.nav-more-menu{position:absolute;right:0;top:calc(100% + 5px);z-index:30;min-width:190px;max-width:min(85vw,300px);display:grid;gap:5px;padding:8px;background:white;border:1px solid #d9e6d7;border-radius:14px;box-shadow:0 12px 30px #153b2729}
+.nav-more-menu button{text-align:left;white-space:nowrap}
+.catalog-filter{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:8px}
+.catalog-filter label{margin-top:0}
+#catalog-count{margin:10px 0 0}
+@media(max-width:600px){.main-nav>button,.nav-more{flex:1 1 calc(33.333% - 8px);min-width:0}.main-nav>button,.nav-more>summary{font-size:.78rem;padding:11px 6px}}
+
+
+
+/* JARDÉO 2.9.5 : navigation directe sans menu Plus */
+.main-nav{display:block;padding:12px 0 10px;overflow:visible}
+.nav-primary{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:7px}
+.nav-primary button{min-width:0;padding:12px 5px;white-space:nowrap;font-size:.89rem;font-weight:650}
+.nav-secondary{display:flex;gap:6px;overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:thin;padding:9px 1px 5px;-webkit-overflow-scrolling:touch}
+.nav-secondary button{flex:1 0 auto;padding:8px 13px;white-space:nowrap;font-size:.82rem;background:#edf3eb;color:#3b6650}
+.nav-primary button.active,.nav-secondary button.active{background:#216943;color:white}
+@media(max-width:600px){.nav-primary{grid-template-columns:repeat(3,minmax(0,1fr))}.nav-primary button{font-size:.83rem;padding:11px 5px}.nav-secondary button{font-size:.79rem;padding:9px 12px}}
+
+/* JARDÉO 3.0 — interface mobile minimaliste */
+.app{padding-bottom:90px}
+header{padding:16px 19px;border-radius:18px}
+header h1{font-size:1.5rem}
+header p{font-size:.85rem}
+#today{font-size:.75rem}
+.bottom-nav{position:fixed;bottom:0;left:0;right:0;z-index:50;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:2px;background:#fff;border-top:1px solid #e3eae1;box-shadow:0 -3px 15px #153d2112;padding:7px max(8px,calc((100vw - 980px)/2)) max(8px,env(safe-area-inset-bottom));overflow:visible}
+.bottom-nav button{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;min-width:0;padding:6px 2px;background:transparent;color:#66786a;font-size:.75rem;border-radius:11px;white-space:nowrap}
+.bottom-nav button span{font-size:1.4rem;line-height:1.3}
+.bottom-nav button.active{background:#e7f1e7;color:#17603c;font-weight:750}
+.minimal-welcome{padding:15px 2px 9px}
+.minimal-welcome h2{margin:0 0 5px;font-size:1.5rem}
+.minimal-welcome p{margin:0}
+.minimal-shortcuts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:16px 0}
+.minimal-shortcuts button{min-height:128px;text-align:left;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:8px;background:#fff;border:1px solid #e5ece2;border-radius:18px;padding:17px;box-shadow:0 2px 10px #173d2109;color:#20392b}
+.minimal-shortcuts button span{font-size:1.8rem}
+.minimal-shortcuts button strong{font-size:1rem}
+.minimal-shortcuts button small{font-size:.8rem;color:#718275}
+.minimal-tip{padding:18px}
+.minimal-tip p{line-height:1.5}
+.minimal-tip .muted{font-size:.8rem}
+.minimal-tools{display:grid;gap:9px;margin-top:18px}
+.minimal-tools button{display:grid;grid-template-columns:35px 1fr 20px;align-items:center;text-align:left;gap:10px;padding:17px 15px;background:#fff;border:1px solid #e5ece2;color:#244a33;border-radius:14px}
+.minimal-tools button span:first-child{font-size:1.4rem}
+.minimal-tools button span:last-child{font-size:1.3rem;color:#82958a}
+@media(min-width:700px){.minimal-shortcuts{grid-template-columns:repeat(4,minmax(0,1fr))}.minimal-shortcuts button{min-height:150px}}
+
+/* Correctif 3.0.1 : neutraliser les anciennes règles nav sticky */
+nav.bottom-nav{position:fixed;top:auto;bottom:0;left:0;right:0;height:auto;min-height:0;margin:0;width:100%;max-height:calc(76px + env(safe-area-inset-bottom));display:grid;grid-template-columns:repeat(4,minmax(0,1fr));align-items:center;overflow:visible;backdrop-filter:none;-webkit-backdrop-filter:none}
+nav.bottom-nav button{flex:none;min-height:53px;margin:0;padding:5px 2px;box-shadow:none;transform:none}
+
+/* Mes plantes : accès rapides compacts */
+.plant-tools{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:16px 0 12px}
+.plant-tool{min-width:0;display:flex;flex-direction:column;align-items:flex-start;gap:4px;text-align:left;padding:13px 15px;background:#fff;border:1px solid #e2eadf;border-radius:15px;color:#20573a;box-shadow:0 2px 9px #173d210b}
+.plant-tool>span:first-child{font-size:1.35rem}
+.plant-tool strong{font-size:.96rem}
+.plant-tool small{color:#708375;font-size:.78rem}
+.plant-tool-catalog{grid-column:1/-1;display:flex;flex-direction:row;align-items:center;gap:11px;background:#e8f2e7}
+.plant-tool-catalog strong{flex:1}
+.plant-tool-catalog>span:last-child{font-size:1.5rem}
+
+/* Météo discrète sous le message de bienvenue */
+.home-weather{display:flex;align-items:center;gap:11px;background:#edf5ed;border:1px solid #dceadc;border-radius:14px;padding:10px 13px;margin:8px 0 14px;color:#23553c;font-size:.88rem}
+.home-weather-icon{font-size:1.6rem}
+.home-weather>div{flex:1;min-width:0}
+.home-weather strong{display:block;font-size:.94rem}
+.home-weather small{display:block;color:#647c6b;font-size:.76rem;margin-top:2px}
+.home-weather button{margin-left:auto;background:transparent;color:#245a3d;padding:5px 9px;font-size:1.2rem}
+
+/* JARDÉO 3.0.8 : éditeur de jardin plus clair sur mobile */
+.garden-intro{margin:18px 0 12px}
+.garden-intro h2{font-size:1.35rem;letter-spacing:-.025em;margin:0 0 5px;color:#194b35}
+.garden-intro p{font-size:.9rem;line-height:1.4;color:#728477;margin:0}
+.garden-editor{padding:14px;border:1px solid #e1eade;border-radius:19px;box-shadow:0 4px 18px #173d210a}
+.garden-editor .map-mode{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;background:#eef3eb;border-radius:13px;padding:5px;margin:0 0 16px}
+.garden-editor .map-mode button{min-width:0;border-radius:10px;padding:11px 5px;font-size:.86rem;font-weight:700;background:transparent;color:#526d59;line-height:1.25}
+.garden-editor .map-mode button.primary{background:#206a48;color:white;box-shadow:0 2px 7px #174c3626}
+.garden-editor label{font-size:.86rem;color:#365b44;margin:0 0 6px}
+.garden-editor select{font-size:.92rem;border-color:#d4e1d2;background:#fbfdf9;padding:11px 12px}
+.garden-hint{color:#728477;font-size:.81rem;line-height:1.4;margin:9px 0 13px}
+.garden-editor .garden-grid{margin:8px 0 12px;gap:4px;padding:6px;border:2px solid #91b58a;background:#d3e6cb;border-radius:15px;aspect-ratio:4/3}
+.garden-editor .garden-cell{border-radius:6px;border-color:#b6d0ad}
+.garden-editor .actions{margin-top:10px}
+.garden-editor .actions button{font-size:.82rem;padding:10px 12px;width:100%;background:#edf3e9;color:#44634e}
+@media(max-width:380px){.garden-editor{padding:11px}.garden-editor .map-mode button{font-size:.8rem}.garden-editor .garden-grid{gap:3px;padding:5px}}
+
+.garden-notice{margin:9px 0 3px;padding:10px 12px;background:#fff4df;color:#765017;border:1px solid #f0d6a4;border-radius:11px;font-size:.86rem;font-weight:600;line-height:1.4}
+
+.welcome-guide{box-sizing:border-box;width:min(92vw,440px);max-height:90dvh;overflow:auto;border:0;border-radius:24px;padding:26px;color:#184d38;background:#fff;box-shadow:0 18px 70px #0004;text-align:center}.welcome-guide::backdrop{background:#102d22aa}.guide-progress{font-size:.85rem;color:#527260}.welcome-guide progress{width:100%;height:8px;accent-color:#39804b}.guide-emoji{font-size:64px;margin:24px 0 10px}.welcome-guide p{line-height:1.6;color:#42574a}.guide-actions{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:24px}.guide-actions button{min-height:44px}
